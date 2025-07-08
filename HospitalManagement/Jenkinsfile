@@ -5,7 +5,7 @@
         stage('Clone') {
             steps {
                 echo 'Cloning source code'
-                git branch: 'main', url: 'https://github.com/LiLyTampone/ProjectCart.git'
+                git branch: 'master, url: 'https://github.com/LiLyTampone/HospitalManagement.git'
             }
         }
 
