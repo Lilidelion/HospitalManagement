@@ -1,0 +1,39 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone') {
+            steps {
+                echo 'Cloning source code'
+                git branch: 'master', url: 'https://github.com/LiLyTampone/HospitalManagement.git'
+            }
+        }
+
+        stage('Restore Packages') {
+            steps {
+                echo 'Restore packages'
+                bat 'dotnet restore'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building project (.NET Core)'
+                bat 'dotnet build --configuration Release'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                echo 'Running tests...'
+                bat 'dotnet test --no-build --verbosity normal'
+            }
+        }
+
+        stage('Publish to Local Folder') {
+            steps {
+                echo 'Publishing to local folder...'
+                bat 'dotnet publish -c Release -o ./publish'
+            }
+        }
+
