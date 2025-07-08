@@ -1,0 +1,224 @@
+﻿/* Header */
+header {
+    background-color: #006b2d; /* Màu xanh đậm */
+    padding: 20px 0;
+    text-align: center;
+    width: 100%; /* Đảm bảo header full width */
+}
+
+/* Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Căn giữa */
+}
+
+    .logo-container img {
+        height: 50px; /* Đảm bảo chiều cao logo */
+    }
+
+    .logo-container h5 {
+        color: white; /* Chữ màu trắng */
+        margin-left: 15px;
+        font-weight: bold;
+        font-size: 24px; /* Font to, dễ nhìn */
+    }
+
+/* Slogan */
+.slogan {
+    font-size: 20px;
+    font-style: italic;
+    color: #e4b400; /* Vàng */
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Menu điều hướng */
+.navbar {
+    background-color: white;
+    padding: 10px 0;
+    width: 100%; /* Đảm bảo full chiều rộng */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Tạo hiệu ứng nổi */
+    position: relative;
+    z-index: 10; /* Đảm bảo menu hiển thị trên header */
+}
+
+.navbar-container {
+    max-width: 1200px; /* Giới hạn nội dung */
+    margin: 0 auto; /* Căn giữa */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Căn chỉnh menu */
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .navbar-nav .nav-item {
+        margin: 0 10px;
+    }
+
+        .navbar-nav .nav-item .nav-link {
+            font-weight: bold;
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+            .navbar-nav .nav-item .nav-link:hover,
+            .navbar-nav .nav-item .nav-link.active {
+                color: #008037; /* Màu xanh lá khi hover */
+            }
+
+/* Nút Tổng đài & Đặt lịch */
+.btn-outline-success, .btn-success {
+    background-color: #008037;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 5px 15px;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-outline-success:hover, .btn-success:hover {
+        background-color: #006b2d;
+    }
+
+/* Thanh tìm kiếm */
+.search-box {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 20px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hiệu ứng nổi */
+}
+
+    .search-box input {
+        border: none;
+        outline: none;
+        padding: 5px;
+        width: 200px;
+    }
+
+    .search-box button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #008037;
+        font-size: 18px;
+    }
+
+.footer {
+    background-color: #006b2d; /* Màu xanh lá cây */
+    color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.footer-top {
+    background-color: #ffeb3b; /* Màu vàng */
+    padding: 12px 20px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.footer-header {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 10px; /* Khoảng cách giữa logo và chữ */
+    flex-wrap: nowrap; /* Đảm bảo không bị xuống dòng */
+    white-space: nowrap;
+}
+
+.footer-logo {
+    width: 50px; /* Điều chỉnh kích thước theo mong muốn */
+    height: 50px;
+    border-radius: 50%; /* Giữ hình dạng tròn nếu cần */
+    object-fit: cover; /* Giữ tỷ lệ hình ảnh mà không bị méo */
+}
+
+.footer-left {
+    max-width: 55%;
+}
+
+    .footer-left ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+    }
+
+        .footer-left ul li {
+            margin-bottom: 6px;
+        }
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+
+.footer-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    line-height: 40px; /* Căn chỉnh chữ ngang hàng với logo */
+}
+
+
+.footer-btn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 18px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 250px;
+    text-align: left;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+    .footer-btn:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .footer-btn .icon-box {
+        width: 42px;
+        height: 42px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        margin-right: 12px;
+    }
+
+        .footer-btn .icon-box img {
+            width: 22px;
+            height: 22px;
+        }

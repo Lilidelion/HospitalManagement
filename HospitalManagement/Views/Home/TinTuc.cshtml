@@ -1,0 +1,88 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Tin tức";
+}
+
+<div class="container mt-4">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Trang chủ</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Tin tức</li>
+            </ol>
+        </nav>
+    </div>
+
+    <h2 class="text-uppercase mb-4">Tin tức y tế mới nhất</h2>
+
+    <!-- Tin tức chính -->
+    <div class="featured-news mb-4">
+        <img src="~/images/new1.jpg" class="featured-img" alt="Bệnh viện Vinmec Cần Thơ chính thức hoạt động ">
+        <h3>Bệnh viện Vinmec Cần Thơ 2.350 tỉ đồng chính thức hoạt động</h3>
+        <p>
+            Ngày 10.3, Tập đoàn Vingroup chính thức khai trương Bệnh viện Đa khoa Vinmec Cần Thơ.
+            Sự kiện này đánh dấu bước tiến quan trọng trong việc nâng cao chất lượng dịch vụ y tế
+            cho người dân khu vực Đồng bằng sông Cửu Long (ĐBSCL).
+        </p>
+
+        <img src="~/images/new2.jpg" class="featured-img" alt="Khai trương bệnh viện Đa khoa Vimec Cần Thơ ">
+        <h3>
+            Khai trương Bệnh viện Đa khoa Vimec Cần Thơ
+        </h3>
+        <p>
+            Sáng 10/3/2025, Hệ thống y tế Vimec tổ chức khai trương Bệnh viện Đa khoa Vimec Cần Thơ. 
+        </p>
+
+        <img src="~/images/new3.webp" class="featured-img" alt="Tổng Bí thư phát biểu về kinh tế tư nhân">
+        <h3>
+            Tổng Bí thư Tô Lâm: “Phải xóa bỏ mọi thái độ, định kiến về kinh tế tư nhân”
+        </h3>
+        <p>
+            Theo Tổng Bí thư Tô Lâm, phải tiếp tục xóa bỏ mọi nhận thức, tư tưởng, quan niệm, thái độ, định kiến về kinh tế tư nhân và kiên trì thay đổi tư duy tiểu nông, manh mún
+        </p>
+
+
+
+    </div>
+</div>
+
+<style>
+    .breadcrumb-container {
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .breadcrumb {
+        margin-bottom: 0;
+        background-color: transparent;
+    }
+
+    .featured-news {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .featured-img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 1rem;
+        color: #333;
+    }
+</style>

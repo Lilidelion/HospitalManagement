@@ -1,0 +1,123 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"] - HospitalManagement</title>
+
+    <!-- Bootstrap & CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/HospitalManagement.styles.css" asp-append-version="true" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center py-2">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <img src="~/images/Logo.png" alt="Logo">
+                    <h5>BỆNH VIỆN BẠCH MAI</h5>
+                </div>
+
+                <!-- Slogan -->
+                <div class="slogan">Vì sức khỏe nhân dân</div>
+
+                <!-- Tổng đài & Đặt lịch -->
+                <div>
+                    <button class="btn btn-outline-success me-2">Gọi tổng đài 1900.888.866</button>
+                    
+                        <button class="btn btn-success" onclick="window.location.href='@Url.Action("Index", "DatLich")'">
+                            Đặt lịch khám
+                        </button>
+                  
+
+
+                </div>
+            </div>
+
+            <!-- Menu -->
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item"><a class="nav-link active" asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="GioiThieu" asp-action="Index">Giới thiệu</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="DatLich" asp-action="Index">Đặt lịch khám</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="TinTuc" asp-action="Index">Tin tức</a></li>
+                        </ul>
+
+                        <!-- Thanh tìm kiếm -->
+                        <div class="search-box">
+                            <input type="text" placeholder="Từ khóa tìm kiếm...">
+                            <button type="submit">🔍</button>
+                        </div>
+
+                        <!-- Đăng nhập/Đăng ký -->
+                        <div class="ms-3">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <a class="btn btn-outline-success" asp-controller="Account" asp-action="Logout">Đăng xuất</a>
+                            }
+                            else
+                            {
+                                <a class="btn btn-success" asp-controller="Account" asp-action="Login">Đăng nhập</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- NỘI DUNG TRANG -->
+    <div class="container mt-3">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-top">
+            <p><strong>Tổng đài :</strong> 1900.888.999</p>
+        </div>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="~/images/Logo.png" alt="Bệnh viện" class="footer-logo">
+                <p><strong>Bệnh viện tư nhân Hà Nội</strong></p>
+                <p>📍 Địa chỉ: 78 Đường Giải Phóng, Phương Mai, Đống Đa, Hà Nội</p>
+                <p>📞 Tổng đài: 1900.888.999</p>
+                <p>📲 Hotline: 096.985.9999</p>
+                <p><strong>🕒 Lịch làm việc:</strong></p>
+                <ul>
+                    <li>📅 Thứ 2 - Thứ 6: 06:00 - 20:00</li>
+                    <li>📅 Thứ 7 - Chủ nhật: 06:30 - 16:30</li>
+                    <li>🌞 Sáng: 07:00 - 12:00</li>
+                    <li>🌆 Chiều: 13:30 - 16:30</li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <button class="footer-btn"><i class="icon-phone"></i> 📞 Gọi tổng đài</button>
+                <button class="footer-btn" onclick="window.location.href='@Url.Action("Index", "DatLich")'">
+                    <i class="icon-calendar"></i> 📅 Đặt lịch khám
+            </div>
+        </div>
+    </footer>
+
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
