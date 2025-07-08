@@ -37,15 +37,17 @@ pipeline {
             }
         }
 
-        stage('Copy to IIS Folder') {
-            steps {
-                echo 'Copying to IIS folder...'
-                // Nếu muốn stop IIS thì bỏ comment dòng dưới
-                // bat 'iisreset /stop'
-                bat 'xcopy "%WORKSPACE%\\publish" /E /Y /I /R "c:\\wwwroot\\myproject"'
-            }
-        }
+stage('Copy to IIS Folder') {
+    steps {
+        echo 'Cleaning and copying to IIS folder...'
 
+        // Xóa thư mục cũ và tạo lại
+        bat 'rd /s /q "C:\\wwwroot\\myproject" && mkdir "C:\\wwwroot\\myproject"'
+
+        // Sao chép bản build đã publish
+        bat 'xcopy "%WORKSPACE%\\publish" /E /Y /I /R "C:\\wwwroot\\myproject"'
+    }
+}
         stage('Deploy to IIS') {
             steps {
                 echo 'Deploying to IIS...'
@@ -61,5 +63,6 @@ pipeline {
                 '''
             }
         }
+
     }
 }
