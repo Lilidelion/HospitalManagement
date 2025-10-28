@@ -34,3 +34,32 @@
         return book;
     }
 }
+Database:
+Là gì?
+Hệ quản trị csdl là gì? MySQL?
+Table? Khoá chính? Khoá phụ
+Các mối quan hệ?
+SQL? CRUD cơ bản
+Query điều kiện? Nhóm dữ liệu? Sắp xếp
+Index? View? Store procedure
+Thiết kế CSDL? Các chuẩn hoá csdl
+Web
+Server? Webserver
+Mô hình Client-server
+Các loại web?
+Giao thức HTTP/HTTPS
+Request? Response
+HTTP Method? HTTP Status
+Java web? Servlet – vòng đời
+Framework? Spring MVC
+Bean? IOC ? DI
+Spring boot?
+ORM? JPA?
+Webservice/API
+Bảo mật
+ReactJS? Các thành quan trọng
+Component? Vòng đời
+Hooks
+Router? Xử lý form
+Xử lý bất đồng bộ
+Call api client
